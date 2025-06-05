@@ -91,7 +91,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: move 3s linear alternate infinite;
-  text-transform: uppercase;
 }
 
 @keyframes move {

@@ -1,5 +1,5 @@
 // Navbar Fix
-window.onscroll = function ( ) {
+window.onscroll = function () {
     const header = document.querySelector('header');
     const fixedNav = header.offsetTop;
 
@@ -20,8 +20,8 @@ hamburger.addEventListener('click', function() {
     navMenu.classList.toggle('hidden');
 });
 
-// Email js
 
+// Email js
   (function(){
     emailjs.init("7tKAHXRDH8G-aSGkP"); // Ganti dengan Public Key lu
   })();

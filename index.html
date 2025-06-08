@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -8,44 +8,72 @@
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
 
-<body>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen transition-colors duration-300">
 
-    <!-- Header Start -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-        <div class="container">
+        <div class="container mx-auto">
             <div class="flex items-center justify-between relative">
                 <div class="px-4 ">
                     <a href="#home" class="font-bold text-2xl uppercase text-animation block py-6">Aprizal</a>
                 </div>
                 <div class="flex items-center px-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-                        <span class="hamburger-line transition duration-300 ease-in-out origin-top-left "></span>
-                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                        <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left "></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-top-left dark:bg-white"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out dark:bg-white"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left dark:bg-white"></span>
                     </button>
 
                     <nav id="nav-menu"
-                        class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        class="hidden absolute py-5 bg-white dark:bg-gray-800 shadow-lg dark:shadow-none rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:dark:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none transition-colors duration-300">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                                <a href="#home"
+                                    class="text-base text-gray-800 dark:text-white py-2 mx-8 flex group-hover:text-primary dark:group-hover:text-blue-400">Home</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">About</a>
+                                <a href="#about"
+                                    class="text-base text-gray-800 dark:text-white py-2 mx-8 flex group-hover:text-primary dark:group-hover:text-blue-400">About</a>
                             </li>
                             <li class="group">
-                                <a href="#project" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Project</a>
+                                <a href="#project"
+                                    class="text-base text-gray-800 dark:text-white py-2 mx-8 flex group-hover:text-primary dark:group-hover:text-blue-400">Project</a>
                             </li>
                             <li class="group">
-                                <a href="#skill" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Skill</a>
+                                <a href="#skill"
+                                    class="text-base text-gray-800 dark:text-white py-2 mx-8 flex group-hover:text-primary dark:group-hover:text-blue-400">Skill</a>
                             </li>
                             <li class="group">
-                                <a href="#certificate" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Certificate</a>
+                                <a href="#certificate"
+                                    class="text-base text-gray-800 dark:text-white py-2 mx-8 flex group-hover:text-primary dark:group-hover:text-blue-400">Certificate</a>
                             </li>
                             <li class="group">
-                                <a href="#Contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                <a href="#Contact"
+                                    class="text-base text-gray-800 dark:text-white py-2 mx-8 flex group-hover:text-primary dark:group-hover:text-blue-400">Contact</a>
+                            </li>
+                            <li class="flex items-center pl-8 lg:pl-0 lg:ml-8">
+                                <div class="flex items-center">
+                                    <span class="mr-2 text-sm text-gray-500 dark:text-gray-300">Light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <label for="dark-toggle">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 dark:bg-blue-600 p-1 transition-colors duration-300">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-gray-500 dark:text-gray-300">Dark</span>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -53,27 +81,24 @@
             </div>
         </div>
     </header>
-    <!-- Header End -->
-
-    <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
-        <div class="container">
+    <section id="home" class="pt-36 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary  md:text-xl">Hello Everyone👋,I am</h1>
-                    <h1 class="text-animation mt-3 text-4xl font-bold">Fahri
-                        Aprizal</h1>
+                    <h1 class="text-base font-semibold text-primary md:text-xl">Hello Everyone👋,I am</h1>
+                    <h1 class="text-animation mt-3 text-4xl font-bold">Fahri Aprizal</h1>
                     <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Backend &
-                        <span class="text-dark">Frontend Developer</span>
+                        <span class="text-gray-800 dark:text-gray-200">Frontend Developer</span>
                     </h2>
-                    <p class="font-medium text-secondary mb-10 leading-relaxed">Welcome to my portfolio, where I bring
-                        my ideas to life through the codes I've learned."<span class="text-dark font-bold">Let's
+                    <p class="font-medium text-secondary dark:text-gray-300 mb-10 leading-relaxed">Welcome to my
+                        portfolio, where I bring
+                        my ideas to life through the codes I've learned."<span
+                            class="text-gray-800 dark:text-gray-200 font-bold">Let's
                             Explore!.</span></p>
 
                     <div>
                         <a href="#contact"
-                            class="text-base font-semibold text-white
-                    bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">Contact
+                            class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">Contact
                             Me</a>
                     </div>
                 </div>
@@ -86,16 +111,15 @@
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
-
-    <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
-        <div class="container">
+    <section id="about" class="pt-36 pb-32 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
-                    <h4 class="text-animation font-bold uppercase text-primary text-2xl mb-3">About Me</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-xd lg:text-4">Eternal Adventure</h2>
-                    <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">I'm Fahri Aprizal, a developer
+                    <h4 class="text-primary font-bold uppercase text-2xl mb-3">About Me</h4>
+                    <h2 class="font-bold text-gray-800 dark:text-white text-3xl mb-5 max-w-xd lg:text-4">Eternal
+                        Adventure</h2>
+                    <p class="font-medium text-secondary dark:text-gray-300 text-base max-w-xl lg:text-lg">I'm Fahri
+                        Aprizal, a developer
                         committed to continuous improvement and embracing the ever-evolving landscape of technology. My
                         passion lies in building scalable and intuitive web applications, and I am constantly seeking
                         new skills in areas such as react js, node js, ci3 to enhance my capabilities. I believe that
@@ -103,14 +127,15 @@
                         and collaborations where I can contribute and learn.</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Let's be Friends</h3>
-                    <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Hey there! I'm Fahri Aprizal, a
+                    <h3 class="font-semibold text-gray-800 dark:text-white text-2xl mb-4 lg:text-3xl lg:pt-10">Let's be
+                        Friends</h3>
+                    <p class="font-medium text-base text-secondary dark:text-gray-300 mb-6 lg:text-lg">Hey there! I'm
+                        Fahri Aprizal, a
                         17-year-old student from Bogor, Indonesia. When I'm not hitting the books, you'll find me
                         jogging through the city, smashing shuttlecocks on the court, or getting lost in my favorite
                         tunes. I also love to sketch and dive into new gaming adventures.</p>
                     <div class="flex items-center">
-                        <!-- youtube -->
-                        <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:border-gray-600 dark:text-gray-400 dark:hover:border-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
                             href="https://youtube.com/@nyenyenyenyenye1234" target="_blank">
                             <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -120,8 +145,7 @@
                             </svg>
                         </a>
 
-                        <!-- Instagram -->
-                        <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:border-gray-600 dark:text-gray-400 dark:hover:border-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
                             href="https://instagram.com/@fhriaprzl" target="_blank">
                             <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -131,8 +155,7 @@
                             </svg>
                         </a>
 
-                        <!-- Tik tok -->
-                        <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:border-gray-600 dark:text-gray-400 dark:hover:border-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
                             href="https://tiktok.com/@fhriaprzl" target="_blank">
                             <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -146,30 +169,28 @@
             </div>
         </div>
     </section>
-    <!-- About Section End -->
-
-    <!-- Portofolio Section Start -->
-    <section id="project" class="pt-36 pb-16 bg-slate-100">
-        <div class="container">
+    <section id="project" class="pt-36 pb-16 bg-slate-100 dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
-                    <h4 class="text-animation font-bold text-2xl mb-2 uppercase">Project
-                    </h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4">My Project
-                    </h2>
-                    <p class="font-medium text-medium text-secondary">Project
-                        that I made</p>
+                    <h4 class="text-primary font-bold text-2xl mb-2 uppercase">Project</h4>
+                    <h2 class="font-bold text-gray-800 dark:text-white text-3xl mb-4">My Project</h2>
+                    <p class="font-medium text-medium text-secondary dark:text-gray-300">Project that I made</p>
                 </div>
             </div>
 
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 lg:w-1/2">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg mb-10">
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg mb-10 transition-colors duration-300">
                         <img src="dist/img/Project/landing page edl.png" alt="Landing page" class="w-full">
                         <div class="py-8 px-6">
-                            <h3 class="mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Eclat De Luxe
+                            <h3
+                                class="mb-3 font-semibold text-xl text-gray-800 dark:text-white hover:text-primary dark:hover:text-blue-400 truncate">
+                                Eclat De Luxe
                             </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Website belanja perhiasan manik manik
+                            <p class="font-medium text-base text-secondary dark:text-gray-300 mb-6">Website belanja
+                                perhiasan manik manik
                                 yang berbasis laravel 11</p>
                             <a href="https://github.com/ijal-fahri/edlofficial"
                                 class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Lihat
@@ -178,12 +199,16 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg mb-10">
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg mb-10 transition-colors duration-300">
                         <img src="dist/img/Project/zoestore.png" alt="E-commerce" class="w-full">
                         <div class="py-8 px-6">
-                            <h3 class="mb-3 font-semibold text-xl text-dark hover:text-primary truncate">ZoeStore
+                            <h3
+                                class="mb-3 font-semibold text-xl text-gray-800 dark:text-white hover:text-primary dark:hover:text-blue-400 truncate">
+                                ZoeStore
                             </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Website belanja sepatu bayi
+                            <p class="font-medium text-base text-secondary dark:text-gray-300 mb-6">Website belanja
+                                sepatu bayi
                                 yang berbasis laravel 11</p>
                             <a href="https://github.com/ijal-fahri/edlofficial"
                                 class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Lihat
@@ -192,13 +217,16 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg mb-10">
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg mb-10 transition-colors duration-300">
                         <img src="dist/img/Project/portofolio.png" alt="Landing page" class="w-full">
                         <div class="py-8 px-6">
-                            <h3 class="mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Portofolio
+                            <h3
+                                class="mb-3 font-semibold text-xl text-gray-800 dark:text-white hover:text-primary dark:hover:text-blue-400 truncate">
+                                Portofolio
                                 Fahri Aprizal
                             </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Website Portofolio
+                            <p class="font-medium text-base text-secondary dark:text-gray-300 mb-6">Website Portofolio
                                 yang berbasis laravel 11</p>
                         </div>
                     </div>
@@ -206,19 +234,13 @@
             </div>
         </div>
     </section>
-    <!-- Portofolio Section End -->
+    <section id="skill" class="pt-36 pb-36 bg-slate-700 dark:bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto text-center">
+            <h4 class="text-primary font-bold text-4xl mb-2">Skill</h4>
+            <h2 class="font-bold text-white text-2xl mb-4">Skills that I have learned</h2>
 
-    <!-- Skill Section Start -->
-    <section id="skill" class="pt-36 pb-36 bg-slate-700">
-        <div class="container text-center">
-            <h4 class="text-animation font-bold text-4xl mb-2">Skill</h4>
-            <h2 class="font-bold text-white text-2xl mb-4">Skills that I have
-                learned</h2>
-
-            <!-- slider -->
             <div class="slider-container mt-10">
                 <div class="slider-track">
-                    <!-- 1st copy -->
                     <div class="slide"><img src="dist/img/skill/html.png" class="logo" alt="HTML" /></div>
                     <div class="slide"><img src="dist/img/skill/css.png" class="logo" alt="CSS" /></div>
                     <div class="slide"><img src="dist/img/skill/js.png" class="logo" alt="JS" /></div>
@@ -243,32 +265,29 @@
                     <div class="slide"><img src="dist/img/skill/tailwind.png" class="logo" alt="tailwind" /></div>
                     <div class="slide"><img src="dist/img/skill/laravel.png" class="logo" alt="laravel" /></div>
                 </div>
+            </div>
     </section>
-    <!-- Skill Section End -->
-
-    <!-- Certificate Section Start -->
-    <section id="certificate" class="pt-36 pb-32 bg-slate-100">
-        <div class="container">
+    <section id="certificate" class="pt-36 pb-32 bg-slate-100 dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
-                    <h4 class="text-animation font-bold text-2xl mb-2 uppercase">
-                        Certificate</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4">My Certificate
-                    </h2>
-                    <p class="font-medium text-medium text-secondary">
-                        Certificate that I have</p>
+                    <h4 class="text-primary font-bold text-2xl mb-2 uppercase">Certificate</h4>
+                    <h2 class="font-bold text-gray-800 dark:text-white text-3xl mb-4">My Certificate</h2>
+                    <p class="font-medium text-medium text-secondary dark:text-gray-300">Certificate that I have</p>
                 </div>
             </div>
 
             <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/2">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 ">
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden mb-10 transition-colors duration-300">
                         <img src="dist/img/certificate/1.png" alt="programming" class="w-full">
                         <div class="py-8 px-6">
                             <h3><a href=""
-                                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Dicoding</a>
+                                    class="block mb-3 font-semibold text-xl text-gray-800 dark:text-white hover:text-primary dark:hover:text-blue-400 truncate">Dicoding</a>
                             </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Pengenalan ke Logika Pemrograman
+                            <p class="font-medium text-base text-secondary dark:text-gray-300 mb-6">Pengenalan ke Logika
+                                Pemrograman
                                 (Programming Logic 101)</p>
                         </div>
                     </div>
@@ -276,39 +295,40 @@
             </div>
         </div>
     </section>
-    <!-- Certificate Section End -->
-
-    <!-- Contact Section Start -->
-    <section id="contact" class="py-20 lg:py-32">
+    <section id="contact" class="py-20 lg:py-32 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="w-full px-4 mb-16">
                 <div class="w-full px-4">
                     <div class="max-w-xl mx-auto text-center mb-16">
-                        <h4 class="font-bold text-2xl text-animation mb-2 uppercase">
-                            Contact</h4>
-                        <h2 class="font-bold text-dark text-3xl mb-4 lg:text-4xl">Contact Me</h2>
-                        <p class="font-medium text-md text-secondary md:text-lg">Fill in the form below if you want to
+                        <h4 class="font-bold text-2xl text-primary mb-2 uppercase">Contact</h4>
+                        <h2 class="font-bold text-gray-800 dark:text-white text-3xl mb-4 lg:text-4xl">Contact Me</h2>
+                        <p class="font-medium text-md text-secondary dark:text-gray-300 md:text-lg">Fill in the form
+                            below if you want to
                             ask questions or give suggestions
                         </p>
                     </div>
                 </div>
             </div>
 
-            <form class="mx-auto max-w-md p-8 bg-white rounded-2xl shadow-xl">
+            <form id="contact-form"
+                class="mx-auto max-w-md p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-colors duration-300">
                 <div class="mb-6">
-                    <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
-                    <input type="text" id="name" placeholder="Enter your name"
-                        class="w-full bg-blue-50 border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800">
+                    <label for="name"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Name</label>
+                    <input type="text" id="name" name="user_name" placeholder="Enter your name"
+                        class="w-full bg-blue-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-white">
                 </div>
                 <div class="mb-6">
-                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email"
-                        class="w-full bg-blue-50 border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800">
+                    <label for="email"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="user_email" placeholder="Enter your email"
+                        class="w-full bg-blue-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-white">
                 </div>
                 <div class="mb-8">
-                    <label for="pesan" class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
-                    <textarea id="pesan" rows="5" placeholder="Your message here..."
-                        class="w-full bg-blue-50 border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 resize-y"></textarea>
+                    <label for="pesan"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Message</label>
+                    <textarea id="pesan" name="message" rows="5" placeholder="Your message here..."
+                        class="w-full bg-blue-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-white resize-y"></textarea>
                 </div>
                 <div class="w-full">
                     <button type="submit"
@@ -316,21 +336,22 @@
                         Send
                     </button>
                 </div>
+                <p id="status-message" class="text-center mt-4 text-sm"></p>
             </form>
         </div>
     </section>
-    <!-- Contact Section End -->
-
-    <!-- Footer Start -->
-    <footer class="bg-gray-900 text-white py-6">
+    <footer class="bg-gray-800 text-white py-6 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-xl font-semibold">Fahri Aprizal </h1>
-            <h2 class="text-md font-semibold">Make with 🧠 and Tailwindcss 3</h2>
-            <p class="text-sm text-gray-400 mt-2">&copy; 2025 Fahri Aprizal. All rights reserved.</p>
+            <h2 class="text-md font-semibold text-gray-300">Make with 🧠 and Tailwindcss 3</h2>
+            <p class="text-sm text-gray-400 mt-2">© 2025 Fahri Aprizal. All rights reserved.</p>
         </div>
     </footer>
-    <!-- Footer End -->
-
+    <a href="#home"
+        class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+        id="to-top">
+        <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2 border-white"></span>
+    </a>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="dist/js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

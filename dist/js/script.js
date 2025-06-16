@@ -42,20 +42,25 @@ window.onscroll = function () {
         });
 
 // Email js
-  (function(){
-    emailjs.init("7tKAHXRDH8G-aSGkP"); // Ganti dengan Public Key lu
-  })();
+        (function(){
+        emailjs.init("7tKAHXRDH8G-aSGkP"); // Public Key 
+    })();
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
 
-    emailjs.sendForm('service_a5nps9o', 'template_3itlr8n', this)
-      .then(function() {
-        document.getElementById("status-message").innerText = "Pesan berhasil dikirim!";
-      }, function(error) {
-        document.getElementById("status-message").innerText = "Gagal mengirim pesan: " + error.text;
-      });
-  });
+        emailjs.sendForm('service_a5nps9o', 'template_3itlr8n', this) // Service ID & Template ID 
+        .then(function() {
+            document.getElementById("status-message").innerText = "Pesan berhasil dikirim!";
+
+            document.getElementById('name').value = '';     
+            document.getElementById('email').value = '';    
+            document.getElementById('pesan').value = '';    
+
+        }, function(error) {
+            document.getElementById("status-message").innerText = "Gagal mengirim pesan: " + error.text;
+        });
+    });
 
 // Darkmode toggle 
         const darkToggle = document.querySelector('#dark-toggle');
@@ -86,3 +91,14 @@ window.onscroll = function () {
             }
         });
 
+
+        function openModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.getElementById('imageModal').classList.remove('flex');
+        }

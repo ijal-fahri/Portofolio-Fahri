@@ -102,3 +102,32 @@ window.onscroll = function () {
             document.getElementById('imageModal').classList.add('hidden');
             document.getElementById('imageModal').classList.remove('flex');
         }
+
+// pop up 
+    document.addEventListener('DOMContentLoaded', function() {
+    const certificateItems = document.querySelectorAll('.certificate-item');
+    const certificatePopup = document.getElementById('certificate-popup');
+    const popupImage = document.getElementById('popup-image');
+    const popupCloseButton = document.getElementById('popup-close');
+
+    certificateItems.forEach(item => {
+    item.addEventListener('click', function() {
+    const imageUrl = this.dataset.image;
+    popupImage.src = imageUrl;
+    certificatePopup.classList.remove('hidden');
+    });
+    });
+
+    popupCloseButton.addEventListener('click', function() {
+    certificatePopup.classList.add('hidden');
+    popupImage.src = ''; // Kosongkan sumber gambar saat ditutup
+    });
+
+    // Tutup pop-up jika klik di luar gambar
+    certificatePopup.addEventListener('click', function(event) {
+    if (event.target === this) {
+    this.classList.add('hidden');
+    popupImage.src = '';
+    }
+    });
+    });

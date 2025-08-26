@@ -56,7 +56,7 @@ module.exports = {
         zoomInModal: 'zoomInModal 0.2s ease-out forwards',
         fadeOutModal: 'fadeOutModal 0.2s ease-out forwards',
         fadeOutOverlay: 'fadeOutOverlay 0.2s ease-out forwards',
-        fadeInUp: 'fadeInUp 1s ease-out forwards', // Sesuaikan durasi dan timing fungsi
+        fadeInUp: 'fadeInUp 1s ease-out forwards',
         fadeIn: 'fadeIn 0.6s ease-out forwards',
         zoomIn: 'zoomIn 0.3s ease-out forwards',
       },
